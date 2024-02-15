@@ -244,3 +244,4 @@
 // const counter = new Counter(1, 10);
 // for (const element of counter) {
 //   console.info(element);
+// }
