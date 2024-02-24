@@ -22,14 +22,14 @@
 // const profile = {};
 
 //* Menambah value dalam object
-// profile["name"] = "Danang";
-// profile["alamat"] = "Kp. Pulo Jahe Rt.02/Rw.010";
-// profile["age"] = 18;
+// profile.name = "Danang";
+// profile.alamat = "Kp. Pulo Jahe Rt.02/Rw.010";
+// profile.age = 18;
 
 //* Mengubah value
-// profile["age"] = 19;
+// profile.age = 19;
 //* Menghapus value dalam object
-// delete profile["age"];
+// delete profile.age;
 
 // console.table(profile);
 
@@ -561,3 +561,20 @@
 //   return total;
 // };
 // console.info(sum(1, 1, 1, 1));
+
+//! -------------------------------------------------------------------
+
+//* Call Method
+// TODO : Memanggil key and value dari object lain
+// const person = {
+//   name: "Danang",
+//   getName: function () {
+//     console.log(`Hello My Name is ${this.name}`);
+//   },
+// };
+
+// const person2 = {
+//   name: "Nugroho",
+// };
+
+// person.getName.call(person2);
