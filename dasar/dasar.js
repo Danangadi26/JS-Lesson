@@ -212,14 +212,15 @@
 //! -------------------------------------------------------------------
 
 //* Function di Variable and Argument
-// function sayHello(name) {
-//   document.writeln(`Hello ${name}`);
-// }
-// function giveName(callback) {
+// let personalName = (callback) => {
 //   callback("Danang");
-// }
-// let say = sayHello;
-// giveName(say);
+// };
+
+// let setName = (name, greet = "Selamat Datang") => {
+//   console.log(`${greet}, Terimakasih sudah mengunjungi resort kami ${name}`);
+// };
+
+// personalName(setName);
 
 // TODO : callback untuk mengembalikan nilai dari function
 
@@ -313,7 +314,7 @@
 //   }
 // }
 // const hasil = factorial(10);
-// document.writeln(hasil);
+// console.log(hasil);
 
 //! -------------------------------------------------------------------
 
@@ -387,16 +388,17 @@
 //! -------------------------------------------------------------------
 
 //* Closure
-// function setAngka(value1) {
-//   const name = "Danang";
-//   function add(value2) {
-//     document.writeln(name);
-//     return value1 + value2;
-//   }
-//   return add;
-// }
-// const getAngka = setAngka(100);
-// document.writeln(getAngka(50));
+let setApple = (value1) => {
+  const name = "Danang";
+  function number(value2) {
+    let result = value1 + value2;
+    return `${name} mempunyai mangga sebanyak ${result}`;
+  }
+  return number;
+};
+
+let result = setApple(20);
+console.log(result(10));
 
 //! -------------------------------------------------------------------
 
