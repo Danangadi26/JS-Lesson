@@ -38,7 +38,7 @@
 // }
 // class Kubus extends Shape {
 //   shape() {
-//TODO : Memanggil seluruh method dalam property
+// TODO : Memanggil seluruh method dalam property
 //     super.shape();
 //     console.info("Halo");
 //   }

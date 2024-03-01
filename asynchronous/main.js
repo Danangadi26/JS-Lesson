@@ -133,3 +133,83 @@
 //   });
 
 // ! ---------------------------------------------------------------------------------------------------
+
+// * Async Await
+// let stocks = {
+//   Fruits: ["Strawberry", "Anggur", "Pisang", "Apel"],
+//   liquid: ["Air", "Ice"],
+//   holder: ["Cone", "Cup", "Stick"],
+//   toppings: ["Chocolate", "Kacang"],
+// };
+
+// let storeOpen = true;
+
+// let setToppings = () => {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve(console.log("Which you Like toppiing?"));
+//     }, 3000);
+//   });
+// };
+
+// async function kitchen() {
+//   console.log("A");
+//   console.log("B");
+//   console.log("C");
+//   await setToppings();
+//   console.log("D");
+//   console.log("E");
+// }
+
+// kitchen();
+
+// console.log("Membersihkan Dapur");
+// console.log("Membersihkan parkiran");
+// console.log("Mencari order");
+
+// ! ---------------------------------------------------------------------------------------------------
+
+// * Project Async/await
+let stocks = {
+  Fruits: ["Strawberry", "Anggur", "Pisang", "Apel"],
+  liquid: ["Water", "Ice"],
+  holder: ["Cone", "Cup", "Stick"],
+  toppings: ["Chocolate", "Kacang"],
+};
+
+let storeOpen = true;
+
+let time = (ms) => {
+  return new Promise((resolve, reject) => {
+    if (storeOpen) {
+      setTimeout(resolve, ms);
+    } else {
+      reject(console.log("Store is Closed"));
+    }
+  });
+};
+
+async function kitchen() {
+  try {
+    await time(2000);
+    console.log(`${stocks.Fruits[2]} was selected`);
+    await time(2000);
+    console.log("Start Production");
+    await time(1000);
+    console.log(`Add ${stocks.liquid[0]} and ${stocks.liquid[1]}`);
+    await time(1000);
+    console.log("Start Machine");
+    await time(2000);
+    console.log(`Es krim with ${stocks.holder[1]}`);
+    await time(3000);
+    console.log(`Topping selected ${stocks.toppings[1]}`);
+    await time(2000);
+    console.log("Es krim ready, please take it");
+  } catch (error) {
+    console.log("Customer left", error);
+  } finally {
+    console.log("Thank You for Coming In");
+  }
+}
+
+kitchen();
